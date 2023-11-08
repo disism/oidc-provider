@@ -1,0 +1,7 @@
+extends layout
+
+block content
+    h1= title
+    form(autocomplete="off", action=`/interaction/${uid}/confirm`, method="post")
+        button(type="submit", autofocus, class="login login-submit") confirm
+        a(href="/interaction/${uid}/abort") [ abort ]

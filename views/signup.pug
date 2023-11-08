@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    p= title
+
+    form(autocomplete="off", action=`/users/create`, method="post")
+        input(required, type="text", name="username", placeholder="Enter any username")
+        input(required, type="password", name="password", placeholder="and password")
+        button(type="submit", class="login login-submit") Sign-up
+
+    if error
+        p= error

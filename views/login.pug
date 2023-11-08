@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1= title
+
+    form(autocomplete="off", action=`/interaction/${uid}/login`, method="post")
+        input(required, type="text", name="login", placeholder="Enter any login")
+        br
+        input(required, type="password", name="password", placeholder="and password")
+        br
+        button(type="submit", class="login login-submit") login
+        br
+        label I don't have an account?
+        a(href="/users/create") Create an account
+
+    if error
+        p= error
